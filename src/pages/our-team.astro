@@ -3,6 +3,7 @@ import { getImage, Image } from 'astro:assets'
 import CourtneyImage from '../assets/images/lsom-courtney.jpg'
 import ElizabethImage from '../assets/images/lsom-elizabeth.jpg'
 import GroupImage from '../assets/images/lsom-group.jpg'
+import SarahImage from '../assets/images/lsom-sarah.jpg'
 import PlaceholderOneImage from '../assets/images/placeholder-1.jpg'
 import ListItem from '../components/text/ListItem.astro'
 import PageTitle from '../components/text/PageTitle.astro'
@@ -90,7 +91,7 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
             >
               <TeamBioCard
                 name="Dr. Courtney Rolnick"
-                jobTitle="PT, DPT, CMLDT - Founder"
+                jobTitle="PT, DPT, CMLDT - Founder/Practitioner"
                 image={CourtneyImage}
               />
               <div class="space-y-4">
@@ -224,6 +225,87 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
                   My family and I recently relocated to the Madison area as we are long-time lovers
                   of the Driftless region. Beyond my work, I find fulfillment in hiking, yoga,
                   horseback riding, cooking, gardening and spending time with family and friends.
+                </p>
+                <div class="mt-6">
+                  <a
+                    href="https://booksy.com/en-us/1554807_lymphatic-specialists-of-madison_massage_39663_madison#ba_s=sh_1"
+                    class="btn btn-primary"
+                    target="_blank"
+                    rel="noopener noreferrer">Book Now</a
+                  >
+                </div>
+              </div>
+            </div>
+          </Card>
+        </div>
+
+        <!-- Sarah Nguyen -->
+        <div class="lsa lsa-slide-up no-repeat group">
+          <Card
+            id="sarah-nguyen"
+            className="p-(--site-padding-base) border-base-200 hover:border-primary max-md:group-[.active]:border-primary max-md:group-[.active]:shadow-lg md:overflow-visible"
+          >
+            <div
+              class="flex flex-col md:flex-row justify-between gap-(--site-padding-md) md:items-start"
+            >
+              <TeamBioCard
+                name="Sarah Nguyen (“Winn”)"
+                jobTitle="OTR/L, CMLDT - Practitioner"
+                image={SarahImage}
+              />
+              <div class="space-y-4">
+                <p class="h3">Hi, I'm Sarah.</p>
+                <p>
+                  I am an Occupational Therapist. My 25-year career has spanned skilled nursing,
+                  acute rehabilitation, long-term care, and home health, giving me broad experience
+                  working with a wide range of diagnoses and stages of life.
+                </p>
+                <p>
+                  As a 25-year practitioner of Tai Chi Chuan, I bring a holistic, Eastern-informed
+                  lens to my work. This perspective has deepened my understanding of how movement,
+                  breath, and the body's systems work together to support lymphatic function and
+                  flow—and how I can better educate you on ways to support your own lymphatic
+                  health. I have a special interest in neuromuscular and lymphatic disorders and in
+                  understanding how profoundly every system of the body can be affected by
+                  healthy—or disrupted—lymphatic function.
+                </p>
+                <p class="h3">
+                  I often liken the lymphatic blockages we address through manual lymphatic drainage
+                  to the energetic blockages addressed in Tai Chi and Qigong practice. For me, the
+                  two are deeply connected.
+                </p>
+                <p>
+                  My goal is to help you heal, move more comfortably through your daily activities,
+                  and better understand your body. I see manual lymphatic drainage as one path
+                  toward that goal, while also sharing practical knowledge and strategies that can
+                  empower you to develop healthy, sustainable habits that support your lymphatic
+                  system beyond the treatment room.
+                </p>
+                <p>
+                  I have been a manual therapist throughout my career, weaving myofascial release,
+                  soft tissue manipulation, and acupressure into my treatment of pain, anxiety, and
+                  lymphatic flow. Early mentorship from several certified lymphedema specialists in
+                  my home health and skilled nursing settings planted the seed for this specialty
+                  long before I had a dedicated avenue to pursue it.
+                </p>
+                <p>
+                  In 2026, I completed my Manual Lymphatic Drainage Therapist certification (CMLDT)
+                  through Klose (Vodder technique) and joined Lymphatic Specialists of Madison under
+                  the mentorship of Dr. Courtney, DPT—an opportunity that feels like coming home to
+                  the practice I have long wanted to focus on exclusively.
+                </p>
+                <p>
+                  I earned my degree in Occupational Therapy from the University of
+                  Wisconsin–Madison in 2001 and have held my OTR/L in Wisconsin ever since. I am
+                  also a certified Tai Chi instructor, teaching adaptive Tai Chi and Qigong for
+                  older adults, alongside my personal practice in the full martial arts system of
+                  Yangjia Michuan Taiji.
+                </p>
+                <p>
+                  My husband is a social worker and fellow Tai Chi practitioner, and together we are
+                  raising two daughters with a shared philosophy centered on whole-person
+                  development—socially, emotionally, and spiritually. It is the same lens I bring to
+                  my patients, and one that shapes our family life as much as my clinical work.
                 </p>
                 <div class="mt-6">
                   <a
