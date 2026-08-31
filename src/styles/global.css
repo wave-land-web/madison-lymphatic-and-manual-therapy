@@ -1,14 +1,14 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 @plugin "@tailwindcss/typography";
 @plugin "daisyui" {
   themes: emerald;
 }
 
 @plugin "daisyui/theme" {
-  name: 'emerald';
+  name: "emerald";
   default: false;
   prefersdark: false;
-  color-scheme: 'light';
+  color-scheme: "light";
   --color-base-100: oklch(0.9893 0.0025 48.72);
   --color-base-200: oklch(0.9494 0.0093 62.58);
   --color-base-300: oklch(0.8952 0.019 62.43);
@@ -70,9 +70,9 @@
 
 @media (prefers-reduced-motion: no-preference) {
   /**
-    * Required class: `lsa` (initializes animations and defaults to fade-in)
-    * Note: Add `no-repeat` class to prevent animations from repeating on scroll
-    */
+   * Required class: `lsa` (initializes animations and defaults to fade-in)
+   * Note: Add `no-repeat` class to prevent animations from repeating on scroll
+   */
   .lsa {
     @apply opacity-0 transform transition duration-700;
 

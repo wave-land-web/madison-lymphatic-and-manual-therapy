@@ -26,7 +26,7 @@ export const structure = (S: any) => {
                 .title('Contact Form')
                 .icon(EnvelopeIcon)
                 .child(S.documentTypeList('contactForm').title('Contact Form Submissions')),
-            ])
+            ]),
         ),
 
       // People at top level
@@ -41,7 +41,7 @@ export const structure = (S: any) => {
                 .title('Users')
                 .icon(UserIcon)
                 .child(S.documentTypeList('user').title('Users')),
-            ])
+            ]),
         ),
     ])
 }

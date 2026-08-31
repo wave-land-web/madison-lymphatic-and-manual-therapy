@@ -3,12 +3,12 @@ import {
   Button,
   Container,
   Head,
+  Heading,
   Hr,
   Html,
   Preview,
   Section,
   Text,
-  Heading
 } from '@react-email/components'
 import { SITE_URL } from '../../consts'
 
