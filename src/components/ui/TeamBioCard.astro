@@ -18,7 +18,7 @@ const { name, jobTitle, image } = Astro.props as TeamBioCardProps
     <div
       class="ring-base-300 group-hover:ring-primary max-md:group-[.active]:ring-primary ring-offset-base-100 w-[clamp(128px,20vw,192px)] rounded-full ring-2 ring-offset-2 transition-all duration-200"
     >
-      <Image width={image.width} height={image.height} src={image.src} alt={name} />
+      <Image width={192} src={image} alt={name} />
     </div>
   </div>
   <h3 class="text-primary mb-2">{name}</h3>

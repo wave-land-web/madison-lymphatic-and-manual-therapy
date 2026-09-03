@@ -59,10 +59,10 @@ import Layout from '../../layouts/Layout.astro'
           stress-related conditions and can:
         </p>
 
-        <ul
+        <div
           class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base) w-full max-w-4xl mx-auto"
         >
-          <div class="list">
+          <ul class="list">
             <ListItem
               number={1}
               text="Alleviate low-back pain, sciatica pain and improve range of motion"
@@ -95,10 +95,10 @@ import Layout from '../../layouts/Layout.astro'
               listItemClass="md:hidden"
               text="Provide support for physical therapy sessions"
             />
-          </div>
+          </ul>
 
           <!-- Desktop only -->
-          <div class="list hidden md:block">
+          <ul class="list hidden md:block">
             <ListItem
               number={5}
               text="Provide pain relief and facilitate healing after work- and car- related accidents"
@@ -109,8 +109,8 @@ import Layout from '../../layouts/Layout.astro'
               text="Reduce pain and discomfort associated with TMJ, carpal tunnel syndrome, fibromyalgia, and chronic fatigue syndrome"
             />
             <ListItem number={8} text="Provide support for physical therapy sessions" />
-          </div>
-        </ul>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -128,10 +128,10 @@ import Layout from '../../layouts/Layout.astro'
           > and can:
         </p>
 
-        <ul
+        <div
           class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base) w-full max-w-4xl mx-auto"
         >
-          <div class="list">
+          <ul class="list">
             <ListItem number={1} text="Relax and soften injured, tired, and overused muscles" />
             <ListItem
               number={2}
@@ -159,10 +159,10 @@ import Layout from '../../layouts/Layout.astro'
               number={7}
               text="Release endorphins—amino acids that work as the body's natural painkiller"
             />
-          </div>
+          </ul>
 
           <!-- Desktop only -->
-          <div class="list hidden md:block">
+          <ul class="list hidden md:block">
             <ListItem
               number={5}
               text="Enhance immunity by stimulating lymph flow—the body's natural defense system"
@@ -175,8 +175,8 @@ import Layout from '../../layouts/Layout.astro'
               number={7}
               text="Release endorphins—amino acids that work as the body's natural painkiller"
             />
-          </div>
-        </ul>
+          </ul>
+        </div>
       </div>
     </ThemedSection>
 

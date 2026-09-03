@@ -123,10 +123,10 @@ import Layout from '../../layouts/Layout.astro'
           of surgeries, including:
         </p>
 
-        <ul
+        <div
           class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base) w-full max-w-4xl mx-auto"
         >
-          <div class="list">
+          <ul class="list">
             <ListItem number={1} text="DIEP flap reconstruction" />
             <ListItem number={2} text="Mastectomy/Breast Reconstruction" />
             <ListItem number={3} text="Brazilian Butt Lift (BBL)" />
@@ -144,10 +144,10 @@ import Layout from '../../layouts/Layout.astro'
             <ListItem number={13} listItemClass="md:hidden" text="Rhinoplasty" />
             <ListItem number={14} listItemClass="md:hidden" text="Orthopedic procedures" />
             <ListItem number={15} listItemClass="md:hidden" text="Gender Affirming Surgery" />
-          </div>
+          </ul>
 
           <!-- Desktop only -->
-          <div class="list hidden md:block">
+          <ul class="list hidden md:block">
             <ListItem number={9} text="Breast Implant" />
             <ListItem number={10} text="Chin Liposuction" />
             <ListItem number={11} text="Labiaplasty" />
@@ -155,8 +155,8 @@ import Layout from '../../layouts/Layout.astro'
             <ListItem number={13} text="Rhinoplasty" />
             <ListItem number={14} text="Orthopedic procedures" />
             <ListItem number={15} text="Gender Affirming Surgery" />
-          </div>
-        </ul>
+          </ul>
+        </div>
       </div>
     </section>
 

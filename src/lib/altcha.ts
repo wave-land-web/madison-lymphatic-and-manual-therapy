@@ -1,3 +1,4 @@
+import { ALTCHA_API_KEY } from 'astro:env/server'
 import { verifySolution } from 'altcha-lib'
 
 interface AltchaVerificationResult {
@@ -5,13 +6,10 @@ interface AltchaVerificationResult {
   error?: string
 }
 
-// IMPORTANT: Must match the key in challenge.ts
-const HMAC_KEY = import.meta.env.ALTCHA_API_KEY
-
 /**
  * Verifies Altcha challenge solution
  */
-export async function verifyAltcha(altchaPayload: string): Promise<AltchaVerificationResult> {
+async function verifyAltcha(altchaPayload: string): Promise<AltchaVerificationResult> {
   if (!altchaPayload) {
     return {
       isValid: false,
@@ -22,7 +20,7 @@ export async function verifyAltcha(altchaPayload: string): Promise<AltchaVerific
   try {
     // Verify the solution with the HMAC key
     // Note: verifySolution accepts either Base64-encoded string or object
-    const isValid = await verifySolution(altchaPayload, HMAC_KEY)
+    const isValid = await verifySolution(altchaPayload, ALTCHA_API_KEY)
 
     console.log('Altcha verification result:', isValid)
 

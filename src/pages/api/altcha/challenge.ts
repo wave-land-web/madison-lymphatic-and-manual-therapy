@@ -1,16 +1,14 @@
+import { ALTCHA_API_KEY } from 'astro:env/server'
 import { createChallenge } from 'altcha-lib'
 import type { APIRoute } from 'astro'
 
 export const prerender = false
 
-// IMPORTANT: Must match the key in challenge.ts
-const HMAC_KEY = import.meta.env.ALTCHA_API_KEY
-
 export const GET: APIRoute = async () => {
   try {
     // Create a new challenge
     const challenge = await createChallenge({
-      hmacKey: HMAC_KEY,
+      hmacKey: ALTCHA_API_KEY,
     })
 
     return new Response(JSON.stringify(challenge), {

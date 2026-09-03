@@ -22,21 +22,11 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
 >
   <PageHeader>
     {/*
-      LAYOUT NOTE - team hero image removed 2026-09-03, pending a replacement photo.
-      Previous layout, to restore alongside the new image:
-        - This wrapper: `container w-full grid grid-cols-1 lg:grid-cols-2
-          gap-(--site-padding-md) lg:gap-(--site-padding-lg) mx-auto`
-        - Text column: add `lg:items-start` and `lg:text-left` (left-aligned from lg up),
-          and return the width to `max-w-[550px]` — it was widened to `max-w-3xl` for the
-          full-width centered layout
-        - Second grid child, directly after the text column, was:
-          <Image width={GroupImage.width} height={GroupImage.height} src={GroupImage.src}
-            alt="Lymphatic Specialists of Madison Team"
-            class="w-full h-auto lg:h-full lg:w-auto lsa lsa-slide-up delay-400 no-repeat" />
-          fed by `import GroupImage from '../assets/images/lsom-group.jpg'` (lsom-group.jpg)
-        - Book Now was split in two: `hidden md:block` (delay-300) inside the text column for
-          desktop, and `block mx-auto md:hidden` (delay-500) after the image for mobile, so the
-          button sat below the photo on small screens. Now a single centered button.
+      Team hero image removed 2026-09-03, pending a replacement photo. Commit 28b8b6d has
+      the previous two-column layout in full — the <Image> markup, its GroupImage import,
+      the Image import from astro:assets, and the split mobile/desktop Book Now buttons.
+      Restore from there rather than from memory. The photo is kept at
+      src/assets/images/lsom-group.jpg.
     */}
     <div class="container w-full flex justify-center mx-auto">
       <div
@@ -364,10 +354,10 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
         <h2 class="h1 text-center text-primary-content lsa lsa-slide-up no-repeat">
           You're a Great Candidate If:
         </h2>
-        <ul
+        <div
           class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base) w-full max-w-4xl mx-auto"
         >
-          <div class="list">
+          <ul class="list">
             <ListItem
               listItemClass="text-primary-content"
               number={1}
@@ -393,9 +383,9 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
               text="Able to work in the Atwood area of Madison"
               listItemClass="md:hidden text-primary-content"
             />
-          </div>
+          </ul>
 
-          <div class="list">
+          <ul class="list">
             <ListItem
               number={3}
               text="Are willing to get certified in MLD"
@@ -411,8 +401,8 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
               text="Able to work in the Atwood area of Madison"
               listItemClass="hidden md:flex text-primary-content"
             />
-          </div>
-        </ul>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -427,10 +417,10 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
           successful career in massage therapy. This includes, but is not limited to:
         </p>
 
-        <ul
+        <div
           class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-md) w-full max-w-4xl mx-auto"
         >
-          <div class="list">
+          <ul class="list">
             <ListItem
               number={1}
               text="A clean and inviting facility in a very popular commercial district"
@@ -442,17 +432,17 @@ const placeholderOneImage = await getImage({ src: PlaceholderOneImage })
               text="Supportive environment for you to grow as a therapist"
             />
             <ListItem number={4} listItemClass="md:hidden" text="Competitive fee schedule" />
-          </div>
+          </ul>
 
-          <div class="list">
+          <ul class="list">
             <ListItem
               number={3}
               listItemClass="hidden md:flex"
               text="Supportive environment for you to grow as a therapist"
             />
             <ListItem number={4} listItemClass="hidden md:flex" text="Competitive fee schedule" />
-          </div>
-        </ul>
+          </ul>
+        </div>
       </div>
     </ThemedSection>
 

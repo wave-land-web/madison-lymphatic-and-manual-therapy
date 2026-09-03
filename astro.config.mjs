@@ -7,6 +7,26 @@ import tailwindcss from '@tailwindcss/vite'
 import { defineConfig, envField, fontProviders } from 'astro/config'
 import { SITE_URL } from './src/consts'
 
+/**
+ * Local font families. Every entry resolves to `./src/assets/fonts/<slug>.woff2` +
+ * `.woff` and the CSS variable `--font-<slug>`, so the slug is the single source of
+ * truth for both. woff2 is listed first because `src` is first-supported-wins.
+ * @type {ReadonlyArray<{slug: string, name: string, weight: number, style?: 'normal' | 'italic'}>}
+ */
+const LOCAL_FONTS = [
+  { slug: 'nuckle-thin', name: 'Nuckle Thin', weight: 100 },
+  { slug: 'nuckle-semibold', name: 'Nuckle Semibold', weight: 600 },
+  { slug: 'nuckle-regular', name: 'Nuckle Regular', weight: 400 },
+  { slug: 'nuckle-medium', name: 'Nuckle Medium', weight: 500 },
+  { slug: 'nuckle-light', name: 'Nuckle Light', weight: 300 },
+  { slug: 'nuckle-hairline', name: 'Nuckle Hairline', weight: 100 },
+  { slug: 'nuckle-extralight', name: 'Nuckle ExtraLight', weight: 200 },
+  { slug: 'nuckle-bold', name: 'Nuckle Bold', weight: 900 },
+  { slug: 'copernicus-italic', name: 'Copernicus Italic', weight: 400, style: 'italic' },
+  { slug: 'copernicus-regular', name: 'Copernicus Regular', weight: 400 },
+  { slug: 'copernicus-regular-2', name: 'Copernicus Regular 2', weight: 400 },
+]
+
 // https://astro.build/config
 export default defineConfig({
   site: SITE_URL,
@@ -65,7 +85,6 @@ export default defineConfig({
     prefetchAll: true,
   },
   vite: {
-    // @ts-ignore - Type compatibility with Tailwind CSS v4 plugin
     plugins: [tailwindcss()],
   },
   image: {
@@ -82,200 +101,25 @@ export default defineConfig({
     cacheOnDemandPages: true,
   }),
 
-  experimental: {
-    fonts: [
-      {
-        provider: fontProviders.local(),
-        name: 'Nuckle Thin',
-        cssVariable: '--font-nuckle-thin',
-        options: {
-          variants: [
-            {
-              src: ['./src/assets/fonts/nuckle-thin.woff', './src/assets/fonts/nuckle-thin.woff2'],
-              weight: 100,
-              style: 'normal',
-              display: 'swap',
-            },
-          ],
-        },
-      },
-      {
-        provider: fontProviders.local(),
-        name: 'Nuckle Semibold',
-        cssVariable: '--font-nuckle-semibold',
-        options: {
-          variants: [
-            {
-              src: [
-                './src/assets/fonts/nuckle-semibold.woff',
-                './src/assets/fonts/nuckle-semibold.woff2',
-              ],
-              weight: 600,
-              style: 'normal',
-              display: 'swap',
-            },
-          ],
-        },
-      },
-      {
-        provider: fontProviders.local(),
-        name: 'Nuckle Regular',
-        cssVariable: '--font-nuckle-regular',
-        options: {
-          variants: [
-            {
-              src: [
-                './src/assets/fonts/nuckle-regular.woff',
-                './src/assets/fonts/nuckle-regular.woff2',
-              ],
-              weight: 400,
-              style: 'normal',
-              display: 'swap',
-            },
-          ],
-        },
-      },
-      {
-        provider: fontProviders.local(),
-        name: 'Nuckle Medium',
-        cssVariable: '--font-nuckle-medium',
-        options: {
-          variants: [
-            {
-              src: [
-                './src/assets/fonts/nuckle-medium.woff',
-                './src/assets/fonts/nuckle-medium.woff2',
-              ],
-              weight: 500,
-              style: 'normal',
-              display: 'swap',
-            },
-          ],
-        },
-      },
-      {
-        provider: fontProviders.local(),
-        name: 'Nuckle Light',
-        cssVariable: '--font-nuckle-light',
-        options: {
-          variants: [
-            {
-              src: [
-                './src/assets/fonts/nuckle-light.woff',
-                './src/assets/fonts/nuckle-light.woff2',
-              ],
-              weight: 300,
-              style: 'normal',
-              display: 'swap',
-            },
-          ],
-        },
-      },
-      {
-        provider: fontProviders.local(),
-        name: 'Nuckle Hairline',
-        cssVariable: '--font-nuckle-hairline',
-        options: {
-          variants: [
-            {
-              src: [
-                './src/assets/fonts/nuckle-hairline.woff',
-                './src/assets/fonts/nuckle-hairline.woff2',
-              ],
-              weight: 100,
-              style: 'normal',
-              display: 'swap',
-            },
-          ],
-        },
-      },
-      {
-        provider: fontProviders.local(),
-        name: 'Nuckle ExtraLight',
-        cssVariable: '--font-nuckle-extralight',
-        options: {
-          variants: [
-            {
-              src: [
-                './src/assets/fonts/nuckle-extralight.woff',
-                './src/assets/fonts/nuckle-extralight.woff2',
-              ],
-              weight: 200,
-              style: 'normal',
-              display: 'swap',
-            },
-          ],
-        },
-      },
-      {
-        provider: fontProviders.local(),
-        name: 'Nuckle Bold',
-        cssVariable: '--font-nuckle-bold',
-        options: {
-          variants: [
-            {
-              src: ['./src/assets/fonts/nuckle-bold.woff', './src/assets/fonts/nuckle-bold.woff2'],
-              weight: 900,
-              style: 'normal',
-              display: 'swap',
-            },
-          ],
-        },
-      },
-      {
-        provider: fontProviders.local(),
-        name: 'Copernicus Italic',
-        cssVariable: '--font-copernicus-italic',
-        options: {
-          variants: [
-            {
-              src: [
-                './src/assets/fonts/copernicus-italic.woff',
-                './src/assets/fonts/copernicus-italic.woff2',
-              ],
-              weight: 400,
-              style: 'italic',
-              display: 'swap',
-            },
-          ],
-        },
-      },
-      {
-        provider: fontProviders.local(),
-        name: 'Copernicus Regular',
-        cssVariable: '--font-copernicus-regular',
-        options: {
-          variants: [
-            {
-              src: [
-                './src/assets/fonts/copernicus-regular.woff',
-                './src/assets/fonts/copernicus-regular.woff2',
-              ],
-              weight: 400,
-              style: 'normal',
-              display: 'swap',
-            },
-          ],
-        },
-      },
-      {
-        provider: fontProviders.local(),
-        name: 'Copernicus Regular 2',
-        cssVariable: '--font-copernicus-regular-2',
-        options: {
-          variants: [
-            {
-              src: [
-                './src/assets/fonts/copernicus-regular-2.woff',
-                './src/assets/fonts/copernicus-regular-2.woff2',
-              ],
-              weight: 400,
-              style: 'normal',
-              display: 'swap',
-            },
-          ],
-        },
-      },
-    ],
-  },
+  fonts: LOCAL_FONTS.map(({ slug, name, weight, style = 'normal' }) => ({
+    provider: fontProviders.local(),
+    name,
+    cssVariable: `--font-${slug}`,
+    options: {
+      // annotated so `display` stays the literal 'swap' rather than widening to string,
+      // and the array stays the non-empty tuple the Fonts API expects
+      variants:
+        /** @type {[{ src: [string, string]; weight: number; style: 'normal' | 'italic'; display: 'swap' }]} */ ([
+          {
+            src: /** @type {[string, string]} */ ([
+              `./src/assets/fonts/${slug}.woff2`,
+              `./src/assets/fonts/${slug}.woff`,
+            ]),
+            weight,
+            style,
+            display: 'swap',
+          },
+        ]),
+    },
+  })),
 })

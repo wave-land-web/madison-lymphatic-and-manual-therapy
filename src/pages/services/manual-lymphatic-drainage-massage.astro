@@ -86,10 +86,10 @@ import Layout from '../../layouts/Layout.astro'
           system or those with (but not limited to) the following conditions:
         </p>
 
-        <ul
+        <div
           class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base) w-full max-w-4xl mx-auto"
         >
-          <div class="list">
+          <ul class="list">
             <ListItem
               number={1}
               text="Autoimmune diseases (such as rheumatoid arthritis, fibromyalgia, lupus and chronic fatigue syndrome)"
@@ -114,10 +114,10 @@ import Layout from '../../layouts/Layout.astro'
             <ListItem number={13} listItemClass="md:hidden" text="Lumpectomy" />
             <ListItem number={14} listItemClass="md:hidden" text="Gender-affirming surgery" />
             <ListItem number={15} listItemClass="md:hidden" text="Post Concussion" />
-          </div>
+          </ul>
 
           <!-- Desktop only -->
-          <div class="list hidden md:block">
+          <ul class="list hidden md:block">
             <ListItem
               number={8}
               text="Pre/post-surgical procedures (such as DIEP flap reconstruction, mastectomy, facelift, knee replacement, hip replacement, liposuction surgery, tummy tuck)"
@@ -129,8 +129,8 @@ import Layout from '../../layouts/Layout.astro'
             <ListItem number={13} text="Lumpectomy" />
             <ListItem number={14} text="Gender-affirming surgery" />
             <ListItem number={15} text="Post Concussion" />
-          </div>
-        </ul>
+          </ul>
+        </div>
       </div>
     </section>
 
@@ -146,10 +146,10 @@ import Layout from '../../layouts/Layout.astro'
           condition or to proceed with treatment. Contraindications include:
         </p>
 
-        <ul
+        <div
           class="grid grid-cols-1 md:grid-cols-2 gap-(--site-padding-base) w-full max-w-4xl mx-auto"
         >
-          <div class="list">
+          <ul class="list">
             <ListItem number={1} text="Congestive heart failure" />
             <ListItem number={2} text="DVT" />
             <ListItem number={3} text="Kidney disorders" />
@@ -160,16 +160,16 @@ import Layout from '../../layouts/Layout.astro'
             <ListItem listItemClass="md:hidden" number={6} text="Acute cold/flu" />
             <ListItem listItemClass="md:hidden" number={7} text="Fever" />
             <ListItem listItemClass="md:hidden" number={8} text="Some medications" />
-          </div>
+          </ul>
 
           <!-- Desktop only -->
-          <div class="list hidden md:block">
+          <ul class="list hidden md:block">
             <ListItem number={5} text="Arteriosclerosis" />
             <ListItem number={6} text="Acute cold/flu" />
             <ListItem number={7} text="Fever" />
             <ListItem number={8} text="Some medications" />
-          </div>
-        </ul>
+          </ul>
+        </div>
       </div>
     </ThemedSection>
 
