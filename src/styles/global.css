@@ -48,6 +48,36 @@
   --site-padding-2xl: clamp(5rem, 6vw, 6rem);
   --site-padding-3xl: clamp(6rem, 7vw, 7rem);
 
+  /* Fluid type scale — same clamp pattern as the --site-padding-* steps above.
+     Every level grows continuously from a 390px to a 1024px viewport instead of
+     snapping at a breakpoint, reaching full size where the desktop layout begins.
+     Floors match the previous mobile sizes and ceilings the previous desktop sizes,
+     so nothing changes size at either extreme.
+     Line heights are separate --leading-* tokens applied as their own utility, not the
+     paired --text-*--line-height form: that form compiles to a --tw-leading fallback,
+     which never resolves on the 43 <p class="h2|h3|h4"> elements that already carry
+     leading-relaxed.
+     `display` is the page-title step the scale was missing, which is why PageTitle
+     used to hardcode its own md:/lg: breakpoints. Line heights are unitless ratios —
+     a fixed rem line-height would not survive a fluid font-size. */
+  --text-display: clamp(2.25rem, 0.44rem + 4.14vw, 3.75rem);
+  --leading-display: 1.05;
+  --text-h1: clamp(2.25rem, 1.79rem + 1.89vw, 3rem);
+  --leading-h1: 1.1;
+  --text-h2: clamp(1.5rem, 1.27rem + 0.95vw, 1.875rem);
+  --leading-h2: 1.2;
+  --text-h3: clamp(1.25rem, 1.1rem + 0.63vw, 1.5rem);
+  --leading-h3: 1.3;
+  --text-h4: clamp(1.125rem, 1.05rem + 0.32vw, 1.25rem);
+  --leading-h4: 1.4;
+  --text-h5: clamp(1rem, 0.92rem + 0.32vw, 1.125rem);
+  --leading-h5: 1.5;
+  --text-h6: clamp(0.875rem, 0.8rem + 0.32vw, 1rem);
+  --leading-h6: 1.5;
+  --text-body: clamp(0.875rem, 0.8rem + 0.32vw, 1rem);
+  --leading-body: 1.625;
+  --text-numeral: clamp(1.875rem, 1.64rem + 0.95vw, 2.25rem);
+
   --font-nuckle-hairline: var(--font-nuckle-hairline);
   --font-nuckle-extralight: var(--font-nuckle-extralight);
   --font-nuckle-light: var(--font-nuckle-light);
@@ -168,38 +198,38 @@
 
   h1,
   .h1 {
-    @apply text-4xl sm:text-5xl;
+    @apply text-h1 leading-h1;
   }
 
   h2,
   .h2 {
-    @apply text-2xl sm:text-3xl;
+    @apply text-h2 leading-h2;
   }
 
   h3,
   .h3 {
-    @apply text-xl sm:text-2xl;
+    @apply text-h3 leading-h3;
   }
 
   h4,
   .h4 {
-    @apply text-lg sm:text-xl;
+    @apply text-h4 leading-h4;
   }
 
   h5,
   .h5 {
-    @apply text-base sm:text-lg;
+    @apply text-h5 leading-h5;
   }
 
   h6,
   .h6 {
-    @apply text-sm sm:text-base;
+    @apply text-h6 leading-h6;
   }
 
   p,
   li:not(nav li),
   .p {
-    @apply max-w-[65ch] text-base-content text-sm sm:text-base text-pretty leading-relaxed;
+    @apply max-w-[65ch] text-base-content text-body leading-body text-pretty;
   }
 
   button,

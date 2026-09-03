@@ -10,6 +10,6 @@ const { number, text, numberClass, listItemClass } = Astro.props
 ---
 
 <li class={`list-row items-center lsa lsa-slide-up no-repeat py-2 ${listItemClass}`}>
-  <span class={`text-3xl sm:text-4xl opacity-40 min-w-8 ${numberClass}`}>{number}</span>
+  <span class={`text-numeral opacity-40 min-w-8 ${numberClass}`}>{number}</span>
   {text}
 </li>
